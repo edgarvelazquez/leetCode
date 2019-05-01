@@ -1,0 +1,22 @@
+905. Sort Array By Parity: https://leetcode.com/problems/sort-array-by-parity/description/
+Answer
+
+class Solution {
+    public int[] sortArrayByParity(int[] A) {
+        int[] temp = new int[A.length];
+        int counter=0;
+        int sizeCounter=A.length-1;
+        for(int i=0; i< A.length;i++){
+            if(A[i]% 2 == 0){
+               temp[counter]=A[i]; 
+                counter++;
+            }
+            else{
+                temp[sizeCounter]=A[i]; 
+                sizeCounter--;
+            }
+            
+        }
+        return temp;
+    }
+}
