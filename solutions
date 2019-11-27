@@ -80,3 +80,33 @@ public class Solution {
         
     }
 }
+
+
+977. Squares of a Sorted Array
+
+class Solution {
+		public int[] sortedSquares(int[] A) {
+			int[] answer = new int[A.length];
+			int start = 0;
+			int end = A.length - 1;
+			int index=A.length - 1;
+            int min=0;
+            int max=0;
+            
+			while (start<end) {
+				min = A[start] * A[start];
+				max = A[end] * A[end];
+				if (max > min) {
+                    answer[index] = max;
+                    end--;
+				} // min>max
+				else{
+					answer[index] = min;
+                    start++;
+				} // max>min
+                index--;
+			} //while
+            answer[index] = A[start]*A[end];
+            return answer;
+		}//main
+	}// solution class
