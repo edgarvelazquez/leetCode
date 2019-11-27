@@ -106,7 +106,8 @@ class Solution {
 				} // max>min
                 index--;
 			} //while
-            answer[index] = A[start]*A[end];
+            answer[index] = A[start]*A[start];//since either start and end will end up in the same spot
             return answer;
 		}//main
 	}// solution class
+
