@@ -111,3 +111,32 @@ class Solution {
 		}//main
 	}// solution class
 
+//141. Linked List Cycle
+//Approach 1-HashSet
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+			Set<ListNode> list = new HashSet<ListNode>();
+
+			while (head != null) {
+				if (list.contains(head)) {
+					return true;
+				} // if
+				else {
+					list.add(head);
+				} // else
+                head = head.next;
+			} // while
+        return false;
+		}
+}
