@@ -140,3 +140,31 @@ public class Solution {
         return false;
 		}
 }
+//Approach 2-Two pointers
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+		ListNode start = head;
+		ListNode end = head; 
+		while (end != null && end.next != null) {
+            		start = start.next;
+			end = end.next.next; //the nodes move first and then check
+			if (end == start) {
+				return true;
+			}
+			
+		}
+		return false;
+	}
+
+}
