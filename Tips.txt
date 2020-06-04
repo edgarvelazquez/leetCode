@@ -1,0 +1,1 @@
+1.When usign hashmapa usually you check if the "key already exist", if not you then put values into the map
